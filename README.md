@@ -3,4 +3,6 @@
  - Tailwind setup
  - Header
  - Routing of App
- 
+ - Login form
+ - Signup form
+ - form validation
