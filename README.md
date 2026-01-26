@@ -6,3 +6,7 @@
  - Login form
  - Signup form
  - form validation
+ - setup redux store
+ - user slice
+ - local storage to make user available on refreshing
+ 

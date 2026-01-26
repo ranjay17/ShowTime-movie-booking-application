@@ -3,11 +3,15 @@ import Header from "./Header";
 import { validateData } from "../utils/validate";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
+import { BG_IMG } from "../utils/constant";
 
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
@@ -30,7 +34,15 @@ const Login = () => {
             returnSecureToken: true,
           },
         );
-        console.log(res);
+        const userData = {
+          email: res.data.email,
+          uid: res.data.localId,
+          token: res.data.idToken,
+        };
+        dispatch(addUser(userData))
+        localStorage.setItem('user', JSON.stringify(userData))
+        navigate('/')
+        
       } catch (error) {
         const firebaseError =
           error?.response?.data?.error?.message || "Something went wrong";
@@ -47,8 +59,14 @@ const Login = () => {
             returnSecureToken: true,
           },
         );
+        const userData = {
+          email: res.data.email,
+          uid: res.data.localId,
+          token: res.data.idToken,
+        };
+        dispatch(addUser(userData))
+        localStorage.setItem('user', JSON.stringify(userData))
         navigate('/')
-        console.log(res);
       } catch (error) {
         const firebaseError =
           error?.response?.data?.error?.message || "Something went wrong";
@@ -61,8 +79,8 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/3d31dac6-aaf0-4e6e-8bd7-e16c5d9cd9a3/web/IN-en-20260119-TRIFECTA-perspective_cce70d60-69c5-428f-99cf-44c212fcec3f_large.jpg"
-          alt="banner"
+          src={BG_IMG}
+          alt="bg"
         />
       </div>
       <form className="absolute bg-black p-12 w-3/12 my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
