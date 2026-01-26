@@ -9,4 +9,8 @@
  - setup redux store
  - user slice
  - local storage to make user available on refreshing
+ - custom hooks to fetch movie
+ - browse page
+ - movie card
+ - movie slice
  
