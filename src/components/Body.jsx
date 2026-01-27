@@ -4,9 +4,12 @@ import Browse from "./Browse";
 import Login from "./Login";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import MovieDetails from "./MovieDetails";
+import BookingPage from "./BookingPage";
+import ProtectedRoute from "./ProtectedRoute";
 
 const Body = () => {
-  const appEouter = createBrowserRouter([
+  const appRouter = createBrowserRouter([
     {
       path: "/",
       element: <Browse />,
@@ -14,6 +17,18 @@ const Body = () => {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/movie/:id",
+      element: <MovieDetails />,
+    },
+    {
+      path: "/booking/:id",
+      element: (
+        <ProtectedRoute>
+          <BookingPage />
+        </ProtectedRoute>
+      ),
     },
   ]);
   const dispatch = useDispatch();
@@ -25,7 +40,7 @@ const Body = () => {
   },[])
   return (
     <div>
-      <RouterProvider router={appEouter} />
+      <RouterProvider router={appRouter} />
     </div>
   );
 };

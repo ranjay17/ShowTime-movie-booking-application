@@ -77,31 +77,25 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute">
-        <img
-          src={BG_IMG}
-          alt="bg"
-        />
-      </div>
-      <form className="absolute bg-black p-12 w-3/12 my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
+      <form className="absolute bg-gray-200 p-12 w-3/12 my-36 mx-auto right-0 left-0 rounded-lg bg-opacity-80">
         <h1 className="font-bold text-2xl py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
         <input
           type="email"
           placeholder="Email Address"
-          className="p-4 my-4 w-full bg-gray-700"
+          className="p-4 my-4 w-full bg-gray-300"
           ref={email}
         />
         <input
           type="password"
           placeholder="Password"
-          className="p-4 my-4 w-full bg-gray-700"
+          className="p-4 my-4 w-full bg-gray-300"
           ref={password}
         />
         <p className="font-bold text-red-700 text-xl">{errorMessage}</p>
         <button
-          className="p-4 my-6 bg-red-700 px-24 w-full rounded-lg"
+          className="p-4 my-6 bg-red-700 px-24 w-full rounded-lg text-white"
           onClick={handleButtonClick}
         >
           {isSignInForm ? "Sign In" : "Sign Up"}

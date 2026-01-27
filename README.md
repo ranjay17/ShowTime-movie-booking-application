@@ -13,4 +13,6 @@
  - browse page
  - movie card
  - movie slice
- 
+ - movie detail
+ - play trailer
+ - Book Movie
