@@ -16,3 +16,4 @@
  - movie detail
  - play trailer
  - Book Movie
+ - email confirmation using emailjs
