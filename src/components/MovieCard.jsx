@@ -4,7 +4,7 @@ import { MOVIE_IMAGE_URL } from "../utils/constant";
 const MovieCard = ({ title, posterPath, id }) => {
   return (
     <Link to={`/movie/${id}`}>
-      <div className="w-36 rounded-lg shadow-sm hover:shadow-lg bg-red-600">
+      <div className="w-36 rounded-2xl shadow-sm hover:shadow-lg bg-red-600">
         <img
           src={`${MOVIE_IMAGE_URL}${posterPath}`}
           alt={title}

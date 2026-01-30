@@ -17,3 +17,8 @@
  - play trailer
  - Book Movie
  - email confirmation using emailjs
+ - Gemini Search feature
+ - Gemini search bar
+ - Gemini movie suggestion
+ - Gemini api key
+ 

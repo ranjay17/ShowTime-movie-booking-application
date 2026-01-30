@@ -7,6 +7,7 @@ import { addUser } from "../utils/userSlice";
 import MovieDetails from "./MovieDetails";
 import BookingPage from "./BookingPage";
 import ProtectedRoute from "./ProtectedRoute";
+import GeminiPage from "./GeminiPage";
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -29,6 +30,10 @@ const Body = () => {
           <BookingPage />
         </ProtectedRoute>
       ),
+    },
+    {
+      path: '/gemini-search',
+      element: <GeminiPage />
     },
   ]);
   const dispatch = useDispatch();
