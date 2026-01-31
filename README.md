@@ -1,24 +1,30 @@
 # Show Time
- - create-vite 
- - Tailwind setup
- - Header
- - Routing of App
- - Login form
- - Signup form
- - form validation
- - setup redux store
- - user slice
- - local storage to make user available on refreshing
- - custom hooks to fetch movie
- - browse page
- - movie card
- - movie slice
- - movie detail
- - play trailer
- - Book Movie
- - email confirmation using emailjs
- - Gemini Search feature
- - Gemini search bar
- - Gemini movie suggestion
- - Gemini api key
- 
+ - create project using Vite + React
+ - Tailwind CSS setup for responsive UI
+ - Application header with navigation
+ - Routing setup using React Router
+ - Login form implementation
+ - Signup form implementation
+ - Form validation for authentication
+ - Firebase Authentication integration
+ - Redux store setup using Redux Toolkit
+ - User slice for authentication state management
+ - Persist user session using localStorage
+ - Custom hook to fetch movies from TMDB API
+ - Browse page to display now playing movies
+- Reusable movie card component
+ - Movie slice for managing movie-related state
+ - Movie details page with complete information
+ - Play movie trailer using YouTube embed
+ - Protected routes for authenticated users
+ - Movie ticket booking page
+ - Seat selection 
+ - Email confirmation on successful booking using EmailJS
+ - AI-powered movie recommendation feature using Gemini AI
+ - Gemini search bar for user queries
+ - AI-based movie suggestions display
+ - Search recommended movies in TMDB API
+ - Gemini slice for managing AI search state
+ - Reusability of components across the application
+ - Environment variables setup using .env for securing API keys
+ - Final optimization and code organization

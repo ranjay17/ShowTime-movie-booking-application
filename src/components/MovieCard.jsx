@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { MOVIE_IMAGE_URL } from "../utils/constant";
 
 const MovieCard = ({ title, posterPath, id }) => {
+  if(!posterPath) return null
   return (
     <Link to={`/movie/${id}`}>
       <div className="w-36 rounded-2xl shadow-sm hover:shadow-lg bg-red-600">
@@ -10,7 +11,7 @@ const MovieCard = ({ title, posterPath, id }) => {
           alt={title}
           className="w-full h-48 object-cover"
         />
-        <h3 className="text-sm font-medium text-center mt-1 px-1 h-10 overflow-hidden">
+        <h3 className="text-sm font-semibold text-center mt-1 px-1 h-10 text-white">
           {title}
         </h3>
       </div>

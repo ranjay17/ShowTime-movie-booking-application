@@ -16,7 +16,6 @@ const Browse = () => {
         <div className=" mt-4 grid grid-cols-6 gap-6 justify-items-center">
           {movies &&
             movies.map((movie) => {
-              console.log("movie:", movie)
               return (
                 <div key={movie.id}>
                   <MovieCard

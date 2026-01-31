@@ -3,6 +3,7 @@ import Header from "./Header";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import { MOVIE_IMAGE_URL } from "../utils/constant";
 
 const BookingPage = () => {
   const movieDetail = useSelector((store) => store.movie.movieDetails);
@@ -42,7 +43,7 @@ const BookingPage = () => {
         "service_h5jvlah",
         "template_3iw2p2r",
         templateParams,
-        "bsFGtEXE40tZPZH86",
+        import.meta.env.VITE_EMAILJS_KEY,
       )
       .then(() => {
         alert("Booking Confirmed & Email Sent!");
@@ -78,7 +79,7 @@ const BookingPage = () => {
         <div className="bg-white p-4 rounded mb-6 max-w-md mx-auto">
           <h2 className="font-bold text-lg text-center">{movieDetail.title}</h2>
           <img
-            src={`https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`}
+            src={`${MOVIE_IMAGE_URL}/${movieDetail.poster_path}`}
             alt="poster"
           />
         </div>

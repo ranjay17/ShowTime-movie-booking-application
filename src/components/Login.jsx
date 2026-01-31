@@ -5,7 +5,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { BG_IMG } from "../utils/constant";
 
 
 const Login = () => {
@@ -27,7 +26,8 @@ const Login = () => {
       // sign up logic
       try {
         const res = await axios.post(
-          "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB5xO0ofV9TiG9j9z18LJPkq-QC2TXOy0o",
+          "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key="+
+            import.meta.env.VITE_FIREBASE_KEY,
           {
             email: email.current.value,
             password: password.current.value,
@@ -39,6 +39,7 @@ const Login = () => {
           uid: res.data.localId,
           token: res.data.idToken,
         };
+        alert("Signup successfull")
         dispatch(addUser(userData))
         localStorage.setItem('user', JSON.stringify(userData))
         navigate('/')
@@ -52,7 +53,8 @@ const Login = () => {
       // sign in logic
       try {
         const res = await axios.post(
-          "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyB5xO0ofV9TiG9j9z18LJPkq-QC2TXOy0o",
+          "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key="+
+            import.meta.env.VITE_FIREBASE_KEY,
           {
             email: email.current.value,
             password: password.current.value,
@@ -65,6 +67,7 @@ const Login = () => {
           token: res.data.idToken,
         };
         dispatch(addUser(userData))
+        alert("Login Sucessfull")
         localStorage.setItem('user', JSON.stringify(userData))
         navigate('/')
       } catch (error) {
