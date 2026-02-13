@@ -46,17 +46,17 @@ const BookingPage = () => {
         import.meta.env.VITE_EMAILJS_KEY,
       )
       .then(() => {
-        alert("Booking Confirmed & Email Sent!");
+        alert("Booking Confirmed & Email Sent");
       })
       .catch(() => {
-        alert("Email failed!");
+        alert("Email failed");
       });
   };
 
   const handleConfirmBooking = () => {
     try {
       if (selectedSeats.length === 0) {
-        setErrorMsg("Please select at least one seat before booking!");
+        setErrorMsg("Please select at least one seat before booking");
         return;
       }
       const bookingDetail = {
